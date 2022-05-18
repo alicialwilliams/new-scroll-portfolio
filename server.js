@@ -8,7 +8,9 @@ const contactRoute = require('./route/contactRoute')
 const app = express();
 //middleware
 app.use(express.json());
-app.use(cors("/", contactRoute));
+app.use(cors());
 
-const port = process.env.PORT || 6000;
+app.use("/", contactRoute);
+
+const port = process.env.PORT || 8000;
 app.listen(port, console.log(`Server listening to PORT ${port}.`));
